@@ -2397,6 +2397,9 @@ function interface_configure($verbose = false, $interface = 'wan', $reload = fal
                 interface_dhcpv6_configure($interface, $wancfg);
             }
             break;
+        case 'linklocal':
+            mwexecf('/sbin/ifconfig %s inet6 -accept_rtadv -ifdisabled up', $realifv6);
+            break;
         case '6rd':
             interface_6rd_configure($interface, $wancfg, $reload || $linkup);
             break;

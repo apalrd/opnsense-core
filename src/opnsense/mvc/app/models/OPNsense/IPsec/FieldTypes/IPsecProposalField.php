@@ -58,6 +58,7 @@ class IPsecProposalField extends BaseListField
         /* a PRF is mandatory for IKE proposals containing AEAD algorithms (gcm) */
         return [
             'aes256gcm16-sha256-modp2048' => null,
+            'aes256gcm16-sha256-modp2048-ke1_mlkem768' => 'aes256gcm16-sha256-modp2048-ke1_mlkem768 [Post-Quantum]',
             'aes256gcm16-sha512-modp2048' => null,
             'aes256gcm16-sha256-ecp521' => null,
             'aes256gcm16-sha512-ecp521' => null,
@@ -65,6 +66,10 @@ class IPsecProposalField extends BaseListField
             'aes256gcm16-sha512-x25519' => 'aes256gcm16-sha512-curve25519 [DH31, Modern EC]',
             'aes256gcm16-sha256-x448' => 'aes256gcm16-sha256-curve448 [DH32, Modern EC]',
             'aes256gcm16-sha512-x448' => 'aes256gcm16-sha512-curve448 [DH32, Modern EC]',
+            'aes256gcm16-sha256-x25519-ke1_mlkem786' => 'aes256gcm16-sha256-curve25519-ke1_mlkem786 [DH31, Modern EC, Post-Quantum]',
+            'aes256gcm16-sha512-x25519-ke1_mlkem1024' => 'aes256gcm16-sha512-curve25519-ke1_mlkem1024 [DH31, Modern EC, Post-Quantum]',
+            'aes256gcm16-sha256-x448-ke1_mlkem786' => 'aes256gcm16-sha256-curve448-ke1_mlkem786 [DH32, Modern EC, Post-Quantum]',
+            'aes256gcm16-sha512-x448-ke1_mlkem1024' => 'aes256gcm16-sha512-curve448-ke1_mlkem1024 [DH32, Modern EC, Post-Quantum]',
             'aes128gcm16-sha256-modp2048' => null,
             'aes128gcm16-sha512-modp2048' => null,
             'aes128gcm16-sha256-ecp521' => null,
@@ -73,6 +78,10 @@ class IPsecProposalField extends BaseListField
             'aes128gcm16-sha512-x25519' => 'aes128gcm16-sha512curve25519 [DH31, Modern EC]',
             'aes128gcm16-sha256-x448' => 'aes128gcm16-sha256-curve448 [DH32, Modern EC]',
             'aes128gcm16-sha512-x448' => 'aes128gcm16-sha512-curve448 [DH32, Modern EC]',
+            'aes128gcm16-sha256-x25519-ke1_mlkem786' => 'aes128gcm16-sha256-curve25519-ke1_mlkem786 [DH31, Modern EC, Post-Quantum]',
+            'aes128gcm16-sha512-x25519-ke1_mlkem1024' => 'aes128gcm16-sha512curve25519-ke1_mlkem1024 [DH31, Modern EC, Post-Quantum]',
+            'aes128gcm16-sha256-x448-ke1_mlkem786' => 'aes128gcm16-sha256-curve448-ke1_mlkem786 [DH32, Modern EC, Post-Quantum]',
+            'aes128gcm16-sha512-x448-ke1_mlkem1024' => 'aes128gcm16-sha512-curve448-ke1_mlkem1024 [DH32, Modern EC, Post-Quantum]',
         ];
     }
 
@@ -80,13 +89,18 @@ class IPsecProposalField extends BaseListField
     {
         return [
             'aes256gcm16-modp2048' => null,
+            'aes256gcm16-modp2048-ke1_mlkem786' => 'aes256gcm16-modp2048-ke1_mlkem786 [Post-Quantum]',
             'aes256gcm16-ecp521' => null,
             'aes256gcm16-x25519' => 'aes256gcm16-curve25519 [DH31, Modern EC]',
             'aes256gcm16-x448' => 'aes256gcm16-curve448 [DH32, Modern EC]',
+            'aes256gcm16-x25519-ke1_mlkem786' => 'aes256gcm16-curve25519-ke1_mlkem786 [DH31, Modern EC, Post-Quantum]',
+            'aes256gcm16-x448-ke1_mlkem786' => 'aes256gcm16-curve448-ke1_mlkem786 [DH32, Modern EC, Post-Quantum]',
             'aes128gcm16-modp2048' => null,
             'aes128gcm16-ecp521' => null,
             'aes128gcm16-x25519' => 'aes128gcm16-curve25519 [DH31, Modern EC]',
             'aes128gcm16-x448' => 'aes128gcm16-curve448 [DH32, Modern EC]',
+            'aes128gcm16-x25519-ke1_mlkem786' => 'aes128gcm16-curve25519-ke1_mlkem786 [DH31, Modern EC, Post-Quantum]',
+            'aes128gcm16-x448-ke1_mlkem786' => 'aes128gcm16-curve448-ke1_mlkem786 [DH32, Modern EC, Post-Quantum]',
         ];
     }
 
@@ -105,6 +119,7 @@ class IPsecProposalField extends BaseListField
             /* Non-AEAD algorithms */
             gettext('Commonly used AES') => [
                 'aes256-sha256-modp2048' => null,
+                'aes256-sha256-modp2048-ke1_mlkem786' => 'aes256-sha256-modp2048-ke1_mlkem786 [Post-Quantum]',
                 'aes256-sha512-modp2048' => null,
                 'aes128-sha256-modp2048' => null,
                 'aes128-sha512-modp2048' => null,
